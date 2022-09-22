@@ -1,3 +1,36 @@
-h1 {
-  color: blueviolet;
+nav {
+    display: flex;
+    justify-content: space-around;
+ 
 }
+h3 {
+    width: 70%;
+    padding-left: 11%;
+    color: #6070FF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+ul {
+    width: 20%;
+    justify-content: space-around;
+    display: flex;
+    padding-right: 7%;
+    padding-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  li {
+    
+    list-style-type: none;
+    color: #344563;
+  }
+
+ 
