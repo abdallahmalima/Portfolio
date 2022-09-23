@@ -4,8 +4,8 @@ body {
   background: url("images/header_bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
-  background-size: 110%;
+  background-position: 0 115px !important;
+  background-size: 107%;
   box-sizing: border-box;
 }
 
@@ -14,14 +14,13 @@ nav {
   justify-content: space-around;
 }
 
-header {
+section {
   display: flex;
   flex-direction: column;
   height: 90%;
-  justify-content: flex-end;
+  justify-content: center;
   padding-left: 3%;
   padding-right: 5%;
-  margin-top: 215px;
 }
 
 .header-title {
@@ -29,7 +28,7 @@ header {
   font-weight: 700;
   font-size: 50px;
   color: #172b4d;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 7px;
 }
 
@@ -38,7 +37,7 @@ header {
   font-size: 20px;
   line-height: 28px;
   color: #344563;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 7px;
 }
 
@@ -67,5 +66,5 @@ h3 {
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
