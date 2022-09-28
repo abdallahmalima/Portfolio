@@ -90,18 +90,24 @@ nav {
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: -47px;
   border-radius: 55px 0 0 0;
   padding-top: 35px;
   background-color: #6070ff;
   height: auto;
-  text-align: center;
   color: #fff;
   background-image: url("images/header_bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 0 0 !important;
   background-size: 100%;
+}
+
+.text-center {
+  text-align: center;
 }
 
 span {
@@ -139,8 +145,10 @@ span {
 }
 
 .p-btn {
-  width: 50%;
-  padding: 5%;
+  width: 40%;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   color: #396df2;
   letter-spacing: 0.03em;
   background: #fff;
@@ -209,11 +217,16 @@ span {
 .input {
   width: 90%;
   margin-bottom: 15px;
-  border-radius: 5px;
-  border: none;
-  padding-left: 3px;
-  padding-right: 3px;
+  margin-top: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: 'Poppins', sans-serif;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #172b4d;
 }
 
 .txt-input {
@@ -221,12 +234,14 @@ span {
   padding-bottom: 10px;
 }
 
-.ml {
-  margin-left: 15px;
-}
-
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 15px;
+  width: 87%;
+  padding-left: 19px;
+  padding-right: 19px;
 }
 
 .heading li,
