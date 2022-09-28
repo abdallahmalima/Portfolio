@@ -90,18 +90,24 @@ nav {
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: -47px;
   border-radius: 55px 0 0 0;
   padding-top: 35px;
   background-color: #6070ff;
   height: auto;
-  text-align: center;
   color: #fff;
   background-image: url("images/header_bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 0 0 !important;
   background-size: 100%;
+}
+
+.text-center {
+  text-align: center;
 }
 
 span {
@@ -209,7 +215,7 @@ span {
 }
 
 .input {
-  width: 80%;
+  width: 90%;
   margin-bottom: 15px;
   margin-top: 15px;
   padding-left: 16px;
@@ -228,12 +234,15 @@ span {
   padding-bottom: 10px;
 }
 
-.ml {
-  margin-left: 15px;
-}
-
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 15px;
+  width: 87%;
+  padding-left: 19px;
+  padding-right: 19px;
+
 }
 
 .heading li,
