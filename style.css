@@ -375,7 +375,7 @@ span {
   .social-links {
     display: flex;
     width: 20%;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-left: 0%;
     gap: 9px;
   }
@@ -502,22 +502,21 @@ span {
 
   .language-list {
     display: flex;
-    width: 55%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 12px;
     padding-left: 0%;
     flex-direction: row;
     position: static;
   }
 
   .about-p1 button {
-    width: 35%;
+    width: auto;
   }
 
   .tech-list-f {
     display: flex;
     background: #f7f7f9;
     flex-direction: column;
-    padding: 7px;
     margin-bottom: 9px;
     border-radius: 8px;
     font-weight: 500;
@@ -527,7 +526,7 @@ span {
 
   .ln-text {
     margin-left: 0;
-    padding-top: 0;
+    padding-top: 9px;
   }
 
   .contact-form {
@@ -563,5 +562,13 @@ span {
     background-attachment: fixed;
     background-position: 50px 50px !important;
     background-size: 90%;
+  }
+
+  .tech-list li h4 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #344563;
   }
 }
