@@ -10,7 +10,12 @@
 <body>
     <header>
     <nav>
-        <h3 class="logo"><a href="#"></a>My Logo</a></h3>
+        <h3 class="logo"><a href="#">My Logo</a></h3>
+        <ul class="nav-menu">
+            <li>Porfolio</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
         <svg width="45" height="45" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M11 15C11 14.4477 11.4477 14 12 14H28C28.5523 14 29 14.4477 29 15C29 15.5523 28.5523 16 28 16H12C11.4477 16 11 15.5523 11 15ZM11 20C11 19.4477 11.4477 19 12 19L28 19C28.5523 19 29 19.4477 29 20C29 20.5523 28.5523 21 28 21L12 21C11.4477 21 11 20.5523 11 20ZM12 24C11.4477 24 11 24.4477 11 25C11 25.5523 11.4477 26 12 26H28C28.5523 26 29 25.5523 29 25C29 24.4477 28.5523 24 28 24H12Z" fill="#6070FF"/>
         </svg>   
@@ -67,7 +72,8 @@
       <div class="card">
         <img src="images/snapshort_project1.png" alt="portfolio project" width="295"
          height="220">
-         <h1 class="header-title">Tonic</h1>
+         <div class="card-text">
+         <h1 class="header-title">Facebook 360</h1>
          <ul class="tonic-items">
             <li>CANOPY</li>
             <li>Back End Dev</li>
@@ -80,10 +86,31 @@
             <li>javascript</li>
          </ul>
          <button  class="p-btn">See Project</button>
+        </div>
       </div>
-      <div class="card">
+      <div class="card rv">
         <img src="images/snapshort_project2.png" alt="portfolio project" width="295"
          height="220">
+         <div class="card-text">
+         <h1 class="header-title">Uber Navigation</h1>
+         <ul class="tonic-items">
+            <li>CANOPY</li>
+            <li>Back End Dev</li>
+            <li>2015</li>
+         </ul>
+         <p class="sub-title">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
+         <ul class="social-links languages">
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+         </ul>
+         <button class="p-btn">See Project</button>
+         </div>
+      </div>
+      <div class="card rv card-l-2">
+        <img src="images/snapshort_project4.png" alt="portfolio project" width="295"
+         height="220">
+         <div class="card-text">
          <h1 class="header-title">Multi-Post Stories</h1>
          <ul class="tonic-items">
             <li>CANOPY</li>
@@ -97,10 +124,12 @@
             <li>javascript</li>
          </ul>
          <button class="p-btn">See Project</button>
+         </div>
       </div>
-      <div class="card">
-        <img src="images/snapshort_project3.png" alt="portfolio project" width="295"
+      <div class="card card-l">
+        <img src="images/snapshort_project5.png" alt="portfolio project" width="295"
          height="220">
+         <div class="card-text">
          <h1 class="header-title">Tonic</h1>
          <ul class="tonic-items">
             <li>CANOPY</li>
@@ -114,27 +143,12 @@
             <li>javascript</li>
          </ul>
          <button class="p-btn">See Project</button>
-      </div>
-      <div class="card">
-        <img src="images/snapshort_project4.png" alt="portfolio project" width="295"
-         height="220">
-         <h1 class="header-title">Multi-Post Stories</h1>
-         <ul class="tonic-items">
-            <li>CANOPY</li>
-            <li>Back End Dev</li>
-            <li>2015</li>
-         </ul>
-         <p class="sub-title">A daily selection of privately personalized reads; no accounts or sign-ups required.</p>
-         <ul class="social-links languages">
-            <li>html</li>
-            <li>css</li>
-            <li>javascript</li>
-         </ul>
-         <button class="p-btn">See Project</button>
+         </div>
       </div>
     </section>
 
-    <section class="heading about">
+    <section class="heading-lg about">
+        <div class="about-p1">
         <h1 class="header-title">About Myself</h1>
         <p class="sub-title">
             Hello I’m a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.
@@ -178,7 +192,9 @@
             </a>
            </li>    
         </ul>
-        <button class="p-btn">Get my resume</button>
+        <button class="p-btn p-about">Get my resume</button>
+        </div>
+        <div class="about-p2">
         <ul class="tech-list">
           <li class="unclicked-tech-list-f">
             <h4>Languages</h4>
@@ -217,6 +233,7 @@
             </svg>
            </li>
         </ul> 
+    </div>
     </section>
    
     <section class="contact">
@@ -231,9 +248,9 @@
                    name="name" 
                    maxlength="30"
                    placeholder="Enter your name here" 
-                   value="Abdallah" required>
-            <input class="input txt-input" type="email" name="email" placeholder="Enter your email here" value="abdallahantony55.aa@gmail.com" required>
-            <textarea  maxlength="500" class="input"  name="message"  placeholder="Enter your message here" cols="10" rows="10" required></textarea>
+                    required>
+            <input class="input txt-input" type="email" name="email" placeholder="Enter your email here"  required>
+            <textarea  maxlength="500" class="input"  name="message"  placeholder="Enter your message here" cols="10" rows="7" required></textarea>
             <button class="p-btn ">Get it Touch</button>
   </form>
         
