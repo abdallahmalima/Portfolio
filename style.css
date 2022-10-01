@@ -41,7 +41,7 @@ nav {
   font-weight: 700;
   font-size: 40px;
   color: #172b4d;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 7px;
 }
 
@@ -51,7 +51,7 @@ nav {
   font-size: 32px;
   line-height: 44px;
   color: #172b4d;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 7px;
 }
 
@@ -60,7 +60,7 @@ nav {
   font-size: 20px;
   line-height: 28px;
   color: #344563;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 7px;
 }
 
@@ -142,7 +142,7 @@ span {
   flex-direction: column;
   padding: 16px;
   background: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid #dfe1e6;
   border-radius: 16px;
   margin-top: 130px;
@@ -198,7 +198,7 @@ span {
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .language-list {
@@ -232,6 +232,10 @@ nav h3 a {
   transform: scale(1.1);
 }
 
+.contact p:hover {
+  transform: translate(0, 18px);
+}
+
 .unclicked-tech-list-p {
   padding-top: 15px;
 }
@@ -247,7 +251,7 @@ nav h3 a {
   margin-top: 15px;
   padding-left: 16px;
   padding-right: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border: 1px solid #cfd8dc;
   border-radius: 8px;
   font-weight: 400;
@@ -318,7 +322,7 @@ nav h3 a {
 }
 
 .logo {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -366,7 +370,7 @@ nav h3 a {
     font-weight: 500;
     font-size: 15px;
     line-height: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   .heading {
@@ -442,7 +446,7 @@ nav h3 a {
     font-weight: 700;
     font-size: 40px;
     color: #172b4d;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 0;
     margin-top: 1px;
   }
@@ -471,7 +475,7 @@ nav h3 a {
     font-size: 16px;
     line-height: 24px;
     color: #344563;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   .card-l {
