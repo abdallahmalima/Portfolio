@@ -218,10 +218,18 @@ span {
   justify-content: space-between;
 }
 
+nav h3 a {
+  text-decoration: none;
+}
+
 .unclicked-tech-list-f {
   display: flex;
   padding-right: 35px;
   justify-content: space-between;
+}
+
+.card img:hover {
+  transform: scale(1.1);
 }
 
 .unclicked-tech-list-p {
