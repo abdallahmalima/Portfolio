@@ -232,10 +232,6 @@ nav h3 a {
   transform: scale(1.1);
 }
 
-.contact p:hover {
-  transform: translate(0, 18px);
-}
-
 .unclicked-tech-list-p {
   padding-top: 15px;
 }
@@ -300,6 +296,10 @@ nav h3 a {
 
 .contact p {
   color: #fff;
+}
+
+.contact p:hover {
+  transform: translate(0, 18px);
 }
 
 .tech-list-f {
