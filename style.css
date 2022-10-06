@@ -55,6 +55,10 @@ nav {
   margin-bottom: 7px;
 }
 
+.input-p {
+  padding-block: 11px;
+}
+
 .sub-title {
   font-weight: 400;
   font-size: 20px;
@@ -66,8 +70,8 @@ nav {
 
 .social-links {
   display: flex;
-  width: 50%;
-  justify-content: space-between;
+  gap: 17px;
+  justify-content: flex-start;
   padding-left: 0%;
 }
 
@@ -159,15 +163,14 @@ span {
 
 .languages {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
 }
 
 .p-btn {
-  width: 40%;
-  padding-left: 12px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  align-self: flex-start;
+  padding-inline: 9px;
+  padding-block: 9px;
   color: #396df2;
   letter-spacing: 0.03em;
   background: #fff;
@@ -254,11 +257,6 @@ nav h3 a {
   font-size: 17px;
   line-height: 20px;
   color: #172b4d;
-}
-
-.txt-input {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .contact-form {
@@ -380,14 +378,6 @@ nav h3 a {
     background-size: 95%;
   }
 
-  .social-links {
-    display: flex;
-    width: 20%;
-    justify-content: flex-start;
-    padding-left: 0%;
-    gap: 9px;
-  }
-
   .language-list li {
     padding-right: 23px;
   }
@@ -447,11 +437,11 @@ nav h3 a {
     margin-top: 1px;
   }
 
+  .contact-form button {
+    align-self: center;
+  }
+
   .p-btn {
-    width: 30%;
-    padding-left: 12px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     color: #396df2;
     letter-spacing: 0.03em;
     background: #fff;
