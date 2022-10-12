@@ -7,12 +7,68 @@ body {
   margin: 0;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   background: #fff;
   padding-left: 19px;
   padding-right: 19px;
+}
+
+#menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #6070ff;
+  mix-blend-mode: multiply;
+  backdrop-filter: blur(7px);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-menu-pop {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-menu-pop li {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.nav-menu-pop li a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .mt {
@@ -55,6 +111,10 @@ nav {
   margin-bottom: 7px;
 }
 
+.input-p {
+  padding-block: 11px;
+}
+
 .sub-title {
   font-weight: 400;
   font-size: 20px;
@@ -66,8 +126,8 @@ nav {
 
 .social-links {
   display: flex;
-  width: 50%;
-  justify-content: space-between;
+  gap: 17px;
+  justify-content: flex-start;
   padding-left: 0%;
 }
 
@@ -159,15 +219,14 @@ span {
 
 .languages {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
 }
 
 .p-btn {
-  width: 40%;
-  padding-left: 12px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  align-self: flex-start;
+  padding-inline: 9px;
+  padding-block: 9px;
   color: #396df2;
   letter-spacing: 0.03em;
   background: #fff;
@@ -218,10 +277,6 @@ span {
   justify-content: space-between;
 }
 
-nav h3 a {
-  text-decoration: none;
-}
-
 .unclicked-tech-list-f {
   display: flex;
   padding-right: 35px;
@@ -254,11 +309,6 @@ nav h3 a {
   font-size: 17px;
   line-height: 20px;
   color: #172b4d;
-}
-
-.txt-input {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .contact-form {
@@ -380,14 +430,6 @@ nav h3 a {
     background-size: 95%;
   }
 
-  .social-links {
-    display: flex;
-    width: 20%;
-    justify-content: flex-start;
-    padding-left: 0%;
-    gap: 9px;
-  }
-
   .language-list li {
     padding-right: 23px;
   }
@@ -447,11 +489,11 @@ nav h3 a {
     margin-top: 1px;
   }
 
+  .contact-form button {
+    align-self: center;
+  }
+
   .p-btn {
-    width: 30%;
-    padding-left: 12px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     color: #396df2;
     letter-spacing: 0.03em;
     background: #fff;

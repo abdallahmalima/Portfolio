@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -16,11 +17,24 @@
             <li>About</li>
             <li>Contact</li>
         </ul>
-        <svg width="45" height="45" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hamburger" width="45" height="45" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M11 15C11 14.4477 11.4477 14 12 14H28C28.5523 14 29 14.4477 29 15C29 15.5523 28.5523 16 28 16H12C11.4477 16 11 15.5523 11 15ZM11 20C11 19.4477 11.4477 19 12 19L28 19C28.5523 19 29 19.4477 29 20C29 20.5523 28.5523 21 28 21L12 21C11.4477 21 11 20.5523 11 20ZM12 24C11.4477 24 11 24.4477 11 25C11 25.5523 11.4477 26 12 26H28C28.5523 26 29 25.5523 29 25C29 24.4477 28.5523 24 28 24H12Z" fill="#6070FF"/>
         </svg>   
     </nav>
 </header>
+<section id="menu">
+   <div class="btn-container">
+    <svg class="close-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="white"/>
+    </svg>
+   </div>
+
+    <ul class="nav-menu-pop">
+        <li class="menu-item"><a href="#porfolio">Porfolio</a></li>
+        <li class="menu-item"><a href="#about">About</a></li>
+        <li class="menu-item"><a href="#contact">Contact</a></li>
+    </ul>
+</section>
 
     <section class="heading">
         <h1 class="header-title">I’m Abdallah Glad to see you!</h1>
@@ -67,8 +81,9 @@
            </li>    
         </ul>
     </section>
+   
 
-    <section class="works">
+    <section id="porfolio" class="works">
       <div class="card">
         <img src="images/snapshort_project1.png" alt="portfolio project" width="295"
          height="220">
@@ -85,7 +100,7 @@
             <li>css</li>
             <li>javascript</li>
          </ul>
-         <button  class="p-btn">See Project</button>
+         <button  class="p-btn"><span>See Project</span></button>
         </div>
       </div>
       <div class="card rv">
@@ -147,7 +162,7 @@
       </div>
     </section>
 
-    <section class="heading-lg about">
+    <section id="about" class="heading-lg about">
         <div class="about-p1">
         <h1 class="header-title">About Myself</h1>
         <p class="sub-title">
@@ -236,22 +251,22 @@
     </div>
     </section>
    
-    <section class="contact">
+    <section id="contact" class="contact">
         <h1 class="header-title text-center">Contact me</h1>
         <p class="sub-title text-center">
             If you have an application you are interested in developing, a feature that you need built or a project that needs coding. I’d love to help with it 
         </p>
         <form class="contact-form" action="https://formspree.io/f/mknerakr" method="post">
             <input 
-                   class="input txt-input" 
+                   class="input input-p" 
                    type="text" 
                    name="name" 
                    maxlength="30"
                    placeholder="Enter your name here" 
                     required>
-            <input class="input txt-input" type="email" name="email" placeholder="Enter your email here"  required>
-            <textarea  maxlength="500" class="input"  name="message"  placeholder="Enter your message here" cols="10" rows="7" required></textarea>
-            <button class="p-btn ">Get it Touch</button>
+            <input class="input input-p" type="email" name="email" placeholder="Enter your email here"  required>
+            <textarea class="input input-p" maxlength="500"  name="message"  placeholder="Enter your message here" cols="10" rows="7" required></textarea>
+            <button class="p-btn">Get it Touch</button>
   </form>
         
     </section>
