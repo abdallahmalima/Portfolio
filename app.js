@@ -12,8 +12,9 @@ close_btn.addEventListener('click',()=>{
     menu.style.display='none';
 });
 
-for(let menu_item of menu_items){
-    menu_item.addEventListener('click',()=>{
+for (let i = 0; i < menu_items.length; i++ ){
+    menu_items[i].addEventListener('click',()=>{
         menu.style.display='none';
     });
 }
+
