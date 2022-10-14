@@ -4,6 +4,8 @@ const close_btn = document.querySelector('.close-btn');
 const porfolio_div = document.querySelector('#porfolio');
 const menu_items = document.querySelectorAll('.menu-item');
 const pop_container = document.querySelector('.pop-container');
+const contact_form = document.querySelector('#contact_form');
+const email_error_msg = document.querySelector('#email_error_msg');
 
 
 
@@ -172,7 +174,7 @@ let cardSm=(project)=>{
          //build HTML string for languages 
          const languages= project.languages.slice(0, 3).map((language,index)=>(
             `<li>${language}</li>`
-             )).join(""); 
+             )).join("");
 
     return `
     <div class="card-popup-sm popup">
@@ -256,5 +258,16 @@ function openPage(link){
     pop_container.style.display='none'
     window.location=link;
 }
+
+contact_form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    let email=contact_form.elements['email'].value;
+    if(email === email.toLowerCase()){
+        contact_form.submit();
+    }else{
+        email_error_msg.textContent="Email must be lowercase,Put email in lowercase and submit again !"
+    }
+    
+});
 
 

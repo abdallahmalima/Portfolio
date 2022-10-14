@@ -487,6 +487,12 @@ span {
   padding-left: 0%;
 }
 
+#email_error_msg {
+  margin-block: 9px;
+  color: red;
+  background: #fff;
+}
+
 .logo {
   font-family: "Poppins", sans-serif;
   font-style: normal;
