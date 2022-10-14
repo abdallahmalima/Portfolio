@@ -1,90 +1,87 @@
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('#menu');
-const close_btn = document.querySelector('.close-btn');
-const porfolio_div = document.querySelector('#porfolio');
-const menu_items = document.querySelectorAll('.menu-item');
-const pop_container = document.querySelector('.pop-container');
-const contact_form = document.querySelector('#contact_form');
-const email_error_msg = document.querySelector('#email_error_msg');
+const closebtn = document.querySelector('.close-btn');
+const porfoliodiv = document.querySelector('#porfolio');
+const menuitems = document.querySelectorAll('.menu-item');
+const popcontainer = document.querySelector('.pop-container');
+const contactForm = document.querySelector('#contact_form');
+const emailErrorMsg = document.querySelector('#email_error_msg');
 
+const nameEl = document.querySelector('#name_el');
+const emailEl = document.querySelector('#email_el');
+const messageEL = document.querySelector('#message_el');
 
-const name_el = document.querySelector('#name_el');
-const email_el = document.querySelector('#email_el');
-const message_el = document.querySelector('#message_el');
-
-
-
-hamburger.addEventListener('click',()=>{
-menu.style.display='flex';
+hamburger.addEventListener('click', () => {
+  menu.style.display = 'flex';
 });
 
-close_btn.addEventListener('click',()=>{
-    menu.style.display='none';
+closebtn.addEventListener('click', () => {
+  menu.style.display = 'none';
 });
 
-for(let menu_item of menu_items){
-    menu_item.addEventListener('click',()=>{
-        menu.style.display='none';
-    });
+for (const menuitem of menuitems) {
+  menuitem.addEventListener('click', () => {
+    menu.style.display = 'none';
+  });
 }
 
-const getBtnId=(index)=>'btn-'+index;
+const getBtnId = (index) => `btn-${index}`;
 
-//list of projects in object
-const projects=[
-    {
-    name:"Facebook 360",
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image:"images/snapshort_project1.png",
-    link_to_live:"https://abdallahmalima.github.io/portfolio_mobile_first/",
-    link_to_source:"https://github.com/abdallahmalima/portfolio_mobile_first",
-    technologies:["CANOPY","Back","2015"],
-    languages:["html","css","javascript","github","ruby","bootstrap"],
-   },
-   {
-    name:"Uber Navigation",
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image:"images/snapshort_project2.png",
-    link_to_live:"https://abdallahmalima.github.io/portfolio_mobile_first/",
-    link_to_source:"https://github.com/abdallahmalima/portfolio_mobile_first",
-    technologies:["CANOPY","Back","2015"],
-    languages:["html","css","javascript","github","ruby","bootstrap"],
-   },
-   {
-    name:"Multi-Post Stories",
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image:"images/snapshort_project4.png",
-    link_to_live:"https://abdallahmalima.github.io/portfolio_mobile_first/",
-    link_to_source:"https://github.com/abdallahmalima/portfolio_mobile_first",
-    technologies:["CANOPY","Back","2015"],
-    languages:["html","css","javascript","github","ruby","bootstrap"],
-   },
-   {
-    name:"Tonic",
-    description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image:"images/snapshort_project5.png",
-    link_to_live:"https://abdallahmalima.github.io/portfolio_mobile_first/",
-    link_to_source:"https://github.com/abdallahmalima/portfolio_mobile_first",
-    technologies:["CANOPY","Back","2015"],
-    languages:["html","css","javascript","github","ruby","bootstrap"],
-   }
+// list of projects in object
+const projects = [
+  {
+    name: 'Facebook 360',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    featured_image: 'images/snapshort_project1.png',
+    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
+    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
+    technologies: ['CANOPY', 'Back', '2015'],
+    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
+  },
+  {
+    name: 'Uber Navigation',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    featured_image: 'images/snapshort_project2.png',
+    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
+    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
+    technologies: ['CANOPY', 'Back', '2015'],
+    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
+  },
+  {
+    name: 'Multi-Post Stories',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    featured_image: 'images/snapshort_project4.png',
+    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
+    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
+    technologies: ['CANOPY', 'Back', '2015'],
+    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
+  },
+  {
+    name: 'Tonic',
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    featured_image: 'images/snapshort_project5.png',
+    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
+    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
+    technologies: ['CANOPY', 'Back', '2015'],
+    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
+  },
 
-]
+];
 
-const cards = projects.map((project,index) => {
- //build HTML string for technologies   
- const technologies= project.technologies.map((technology)=>(
-`<li>${technology}</li>`
- )).join("");  
+const cards = projects.map((project, index) => {
+  // build HTML string for technologies
+  const technologies = project.technologies.map((technology) => (
+    `<li>${technology}</li>`
+  )).join('');
 
- //build HTML string for languages 
- const languages= project.languages.slice(0, 3).map((language,index)=>(
+  // build HTML string for languages
+  const languages = project.languages.slice(0, 3).map((language, index) => (
     `<li>${language}</li>`
-     )).join(""); 
+  )).join('');
 
-     //build and return HTML string for the whole project card 
- return `
-    <div class="card ${(index+1)%2==0?'rv':''}">
+  // build and return HTML string for the whole project card
+  return `
+    <div class="card ${(index + 1) % 2 == 0 ? 'rv' : ''}">
     <img src="${project.featured_image}" alt="portfolio project" width="295"
      height="220">
      <div class="card-text">
@@ -92,29 +89,27 @@ const cards = projects.map((project,index) => {
      <ul class="tonic-items">
         ${technologies}
      </ul>
-     <p class="sub-title">${project.description.substring(0,83)}</p>
+     <p class="sub-title">${project.description.substring(0, 83)}</p>
      <ul class="social-links languages">
         ${languages}
      </ul>
      <button id="${getBtnId(index)}" onclick="showPopMenu(${index})" class="p-btn"><span>See Project</span></button>
     </div>
     </div>
-    `
-}).join("");
+    `;
+}).join('');
 
-let cardLg=(project)=>{
-    
-    
-    const technologies= project.technologies.map((technology)=>(
-        `<li>${technology}</li>`
-         )).join("");  
-        
-         //build HTML string for languages 
-         const languages= project.languages.map((language,index)=>(
-            `<li>${language}</li>`
-             )).join(""); 
+const cardLg = (project) => {
+  const technologies = project.technologies.map((technology) => (
+    `<li>${technology}</li>`
+  )).join('');
 
-    return `
+  // build HTML string for languages
+  const languages = project.languages.map((language, index) => (
+    `<li>${language}</li>`
+  )).join('');
+
+  return `
     <div class="card-popup popup">
             <div class="card-text">
                 <div class="header-title-popup-div">
@@ -168,20 +163,18 @@ let cardLg=(project)=>{
             </div>
           </div>
     `;
-}
-let cardSm=(project)=>{
-    
-    
-    const technologies= project.technologies.map((technology)=>(
-        `<li>${technology}</li>`
-         )).join("");  
-        
-         //build HTML string for languages 
-         const languages= project.languages.slice(0, 3).map((language,index)=>(
-            `<li>${language}</li>`
-             )).join("");
+};
+const cardSm = (project) => {
+  const technologies = project.technologies.map((technology) => (
+    `<li>${technology}</li>`
+  )).join('');
 
-    return `
+  // build HTML string for languages
+  const languages = project.languages.slice(0, 3).map((language, index) => (
+    `<li>${language}</li>`
+  )).join('');
+
+  return `
     <div class="card-popup-sm popup">
             <div class="card-text">
                 <div class="header-title-popup-div">
@@ -201,7 +194,7 @@ let cardSm=(project)=>{
              ${languages}
              </ul>
             <div class="btn-group">
-                <button  onclick="openPage('${project.link_to_live}')" class="p-btn">
+                <button id="open-line-btn" link="${project.link_to_live}" onclick="openPage('${project.link_to_live}')" class="p-btn">
                     <span>See live</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M5 12C5 8.13401 8.13401 5 12 5C12.5523 5 13 4.55228 13 4C13 3.44772 12.5523 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 11.4477 20.5523 11 20 11C19.4477 11 19 11.4477 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12ZM16 3C15.4477 3 15 3.44772 15 4C15 4.55228 15.4477 5 16 5H17.5858L11.2929 11.2929C10.9024 11.6834 10.9024 12.3166 11.2929 12.7071C11.6834 13.0976 12.3166 13.0976 12.7071 12.7071L19 6.41421V8C19 8.55228 19.4477 9 20 9C20.5523 9 21 8.55228 21 8V4C21 3.44772 20.5523 3 20 3H16Z" fill="#6070FF"/>
@@ -232,95 +225,84 @@ let cardSm=(project)=>{
             </div>
           </div>
     `;
-}
+};
 
-let popCard=(project)=>{
-     if (window.matchMedia("(min-width: 768px)").matches) {
-       return cardLg(project);
-      } 
-       return cardSm(project);
-}
+const popCard = (project) => {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    return cardLg(project);
+  }
+  return cardSm(project);
+};
 
+porfoliodiv.innerHTML = cards;
 
+function showPopMenu(index) {
+  const project = projects[index];
+  popcontainer.innerHTML = popCard(project);
+  popcontainer.style.display = 'flex';
 
-porfolio_div.innerHTML=cards;
+  window.onresize = function () {
+    popcontainer.innerHTML = popCard(project);
+  };
 
-function showPopMenu(index){
-    let project=projects[index];
-    pop_container.innerHTML=popCard(project);
-    pop_container.style.display='flex'
-     
-    window.onresize = function(){
-       pop_container.innerHTML=popCard(project);
-    }
-
-    document.querySelector('.popup-cancel').addEventListener("click",()=>{
-        pop_container.style.display='none'
-    });
-}
-
-function openPage(link){
-    pop_container.style.display='none'
-    window.location=link;
-}
-
-contact_form.addEventListener('submit',(event)=>{
-    event.preventDefault();
-    let email=contact_form.elements['email'].value;
-    if(email === email.toLowerCase()){
-        contact_form.submit();
-    }else{
-        email_error_msg.textContent="Email must be lowercase,Put email in lowercase and submit again !"
-    }
-    
-});
-
-let user={
-    name:'',
-    email:'',
-    message:'',
-}
-
-name_el.addEventListener('change',()=>{
- user.name=name_el.value;
- localStorage.setItem('user',JSON.stringify(user));
- user=JSON.parse(localStorage.getItem('user'));
- name_el.value=user.name;
-});
-
- email_el.addEventListener('change',()=>{
-    user.email=email_el.value;
-    localStorage.setItem('user',JSON.stringify(user));
-    user=JSON.parse(localStorage.getItem('user'));
-    email_el.value=user.email;
+  document.querySelector('.popup-cancel').addEventListener('click', () => {
+    popcontainer.style.display = 'none';
   });
+}
 
-  message_el.addEventListener('change',()=>{
-    user.message=message_el.value;
-    localStorage.setItem('user',JSON.stringify(user));
-    user=JSON.parse(localStorage.getItem('user'));
-    message_el.value=user.message;
+function openPage(link) {
+  popcontainer.style.display = 'none';
+  window.location = link;
+}
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = contactForm.elements.email.value;
+  if (email === email.toLowerCase()) {
+    contactForm.submit();
+  } else {
+    emailErrorMsg.textContent = 'Email must be lowercase,Put email in lowercase and submit again !';
+  }
 });
 
+let user = {
+  name: '',
+  email: '',
+  message: '',
+};
 
-window.onload = function(){
-    user=JSON.parse(localStorage.getItem('user'));
-    if(user){
-        name_el.value=user.name;
-        email_el.value=user.email;
-        message_el.value=user.message;
-    }else{
-        user={
-        name:'',
-        email:'',
-        message:'',
-       }
-    }
-    
- }
+nameEl.addEventListener('change', () => {
+  user.name = nameEl.value;
+  localStorage.setItem('user', JSON.stringify(user));
+  user = JSON.parse(localStorage.getItem('user'));
+  nameEl.value = user.name;
+});
 
+emailEl.addEventListener('change', () => {
+  user.email = emailEl.value;
+  localStorage.setItem('user', JSON.stringify(user));
+  user = JSON.parse(localStorage.getItem('user'));
+  emailEl.value = user.email;
+});
 
+messageEL.addEventListener('change', () => {
+  user.message = messageEL.value;
+  localStorage.setItem('user', JSON.stringify(user));
+  user = JSON.parse(localStorage.getItem('user'));
+  messageEL.value = user.message;
+});
 
-
-
-
+window.onload = function () {
+  user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+    nameEl.value = user.name;
+    emailEl.value = user.email;
+    messageEL.value = user.message;
+  } else {
+    user = {
+      name: '',
+      email: '',
+      message: '',
+    };
+  }
+};
