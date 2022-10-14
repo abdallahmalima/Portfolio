@@ -8,6 +8,11 @@ const contact_form = document.querySelector('#contact_form');
 const email_error_msg = document.querySelector('#email_error_msg');
 
 
+const name_el = document.querySelector('#name_el');
+const email_el = document.querySelector('#email_el');
+const message_el = document.querySelector('#message_el');
+
+
 
 hamburger.addEventListener('click',()=>{
 menu.style.display='flex';
@@ -269,5 +274,53 @@ contact_form.addEventListener('submit',(event)=>{
     }
     
 });
+
+let user={
+    name:'',
+    email:'',
+    message:'',
+}
+
+name_el.addEventListener('change',()=>{
+ user.name=name_el.value;
+ localStorage.setItem('user',JSON.stringify(user));
+ user=JSON.parse(localStorage.getItem('user'));
+ name_el.value=user.name;
+});
+
+ email_el.addEventListener('change',()=>{
+    user.email=email_el.value;
+    localStorage.setItem('user',JSON.stringify(user));
+    user=JSON.parse(localStorage.getItem('user'));
+    email_el.value=user.email;
+  });
+
+  message_el.addEventListener('change',()=>{
+    user.message=message_el.value;
+    localStorage.setItem('user',JSON.stringify(user));
+    user=JSON.parse(localStorage.getItem('user'));
+    message_el.value=user.message;
+});
+
+
+window.onload = function(){
+    user=JSON.parse(localStorage.getItem('user'));
+    if(user){
+        name_el.value=user.name;
+        email_el.value=user.email;
+        message_el.value=user.message;
+    }else{
+        user={
+        name:'',
+        email:'',
+        message:'',
+       }
+    }
+    
+ }
+
+
+
+
 
 
