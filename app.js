@@ -228,7 +228,7 @@ let cardSm=(project)=>{
 }
 
 let popCard=(project)=>{
-     if (window.matchMedia("(min-width: 600px)").matches) {
+     if (window.matchMedia("(min-width: 768px)").matches) {
        return cardLg(project);
       } 
        return cardSm(project);
@@ -242,6 +242,10 @@ function showPopMenu(index){
     let project=projects[index];
     pop_container.innerHTML=popCard(project);
     pop_container.style.display='flex'
+     
+    window.onresize = function(){
+       pop_container.innerHTML=popCard(project);
+    }
 
     document.querySelector('.popup-cancel').addEventListener("click",()=>{
         pop_container.style.display='none'

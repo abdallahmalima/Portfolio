@@ -311,6 +311,7 @@ span {
 
 .btn-group {
   display: flex;
+  justify-content: center;
   border-top: 1px solid #ebecf0;
   padding-top: 9%;
   gap: 4%;
