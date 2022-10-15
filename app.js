@@ -7,9 +7,7 @@ const popcontainer = document.querySelector('.pop-container');
 const contactForm = document.querySelector('#contact_form');
 const emailErrorMsg = document.querySelector('#email_error_msg');
 
-const nameEl = document.querySelector('#name_el');
-const emailEl = document.querySelector('#email_el');
-const messageEL = document.querySelector('#message_el');
+const formInputs = document.querySelectorAll('.input');
 
 hamburger.addEventListener('click', () => {
   menu.style.display = 'flex';
@@ -285,33 +283,22 @@ let user = {
   message: '',
 };
 
-nameEl.addEventListener('change', () => {
-  user.name = nameEl.value;
-  localStorage.setItem('user', JSON.stringify(user));
-  user = JSON.parse(localStorage.getItem('user'));
-  nameEl.value = user.name;
-});
-
-emailEl.addEventListener('change', () => {
-  user.email = emailEl.value;
-  localStorage.setItem('user', JSON.stringify(user));
-  user = JSON.parse(localStorage.getItem('user'));
-  emailEl.value = user.email;
-});
-
-messageEL.addEventListener('change', () => {
-  user.message = messageEL.value;
-  localStorage.setItem('user', JSON.stringify(user));
-  user = JSON.parse(localStorage.getItem('user'));
-  messageEL.value = user.message;
+[...formInputs].forEach((formInput) => {
+  formInput.addEventListener('change', () => {
+    const key = formInput.getAttribute('name');
+    user[key] = formInput.value;
+    localStorage.setItem('user', JSON.stringify(user));
+    user = JSON.parse(localStorage.getItem('user'));
+    formInput.value = user[key];
+  });
 });
 
 window.onload = () => {
   user = JSON.parse(localStorage.getItem('user'));
   if (user) {
-    nameEl.value = user.name;
-    emailEl.value = user.email;
-    messageEL.value = user.message;
+    contactForm.elements.name.value = user.name;
+    contactForm.elements.email.value = user.email;
+    contactForm.elements.message.value = user.message;
   } else {
     user = {
       name: '',
