@@ -10,31 +10,25 @@
 - HTML/CSS
 - LInters
 
-## Live Demo (if available)
+## Live Demo
 [Live Demo Link](https://abdallahmalima.github.io/portfolio_mobile_first)
 
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**Follow below steps to get the project run on your computer**
 
 
-To get a local copy up and running follow these simple example steps.
+
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
-
+Git must be installed on your computer
 ### Setup
-
-### Install
-
+Clone the repository
 ### Usage
-
-### Run tests
-
-### Deployment
-
+Open index.html file
 
 
 ## Authors
