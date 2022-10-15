@@ -261,14 +261,15 @@
         </p>
         <form class="contact-form" action="https://formspree.io/f/mknerakr" method="post" id="contact_form">
             <input 
+                    id="name_el"
                    class="input input-p" 
                    type="text" 
                    name="name" 
                    maxlength="30"
                    placeholder="Enter your name here" 
                     required>
-            <input class="input input-p" type="email" name="email" placeholder="Enter your email here"  required>
-            <textarea class="input input-p" maxlength="500"  name="message"  placeholder="Enter your message here" cols="10" rows="7" required></textarea>
+            <input  id="email_el" class="input input-p" type="email" name="email" placeholder="Enter your email here"  required>
+            <textarea  id="message_el" class="input input-p" maxlength="500"  name="message"  placeholder="Enter your message here" cols="10" rows="7" required></textarea>
             <span id="email_error_msg"></span>
             <button class="p-btn">Get it Touch</button>
   </form>
