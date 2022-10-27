@@ -36,6 +36,7 @@ nav {
   bottom: 0;
   background-color: rgba(193, 199, 208, 0.3);
   backdrop-filter: blur(7px);
+  animation: popDown 0.7s;
 }
 
 #menu {
@@ -48,9 +49,33 @@ nav {
   right: 0;
   top: 0;
   bottom: 0;
-  background: #6070ff;
-  mix-blend-mode: multiply;
+  background: rgba(96, 112, 255, 0.79);
   backdrop-filter: blur(7px);
+  animation: showElement 0.7s;
+}
+
+@keyframes popDown {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes showElement {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
 .btn-container {
