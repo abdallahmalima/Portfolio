@@ -1,3 +1,5 @@
+import projects from './data.js';
+
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('#menu');
 const closebtn = document.querySelector('.close-btn');
@@ -24,76 +26,83 @@ closebtn.addEventListener('click', () => {
 });
 
 // list of projects in object
-const projects = [
-  {
-    name: 'Facebook 360',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image: 'images/snapshort_project1.png',
-    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
-    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
-    technologies: ['CANOPY', 'Back', '2015'],
-    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
-  },
-  {
-    name: 'Uber Navigation',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image: 'images/snapshort_project2.png',
-    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
-    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
-    technologies: ['CANOPY', 'Back', '2015'],
-    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
-  },
-  {
-    name: 'Multi-Post Stories',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image: 'images/snapshort_project4.png',
-    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
-    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
-    technologies: ['CANOPY', 'Back', '2015'],
-    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
-  },
-  {
-    name: 'Tonic',
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    featured_image: 'images/snapshort_project5.png',
-    link_to_live: 'https://abdallahmalima.github.io/portfolio_mobile_first/',
-    link_to_source: 'https://github.com/abdallahmalima/portfolio_mobile_first',
-    technologies: ['CANOPY', 'Back', '2015'],
-    languages: ['html', 'css', 'javascript', 'github', 'ruby', 'bootstrap'],
-  },
+const  getProjectsFromGithub= async (url)=> {
+  try {
+    const response = await fetch(url);
 
-];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
 
-const cards = projects.map((project, index) => {
-  // build HTML string for technologies
-  const technologies = project.technologies.map((technology) => (
-    `<li>${technology}</li>`
-  )).join('');
+const filterStaredRepos=(projects)=>{
+ return projects.filter(project=>project.stargazers_count>0);
+}
 
-  // build HTML string for languages
-  const languages = project.languages.slice(0, 3).map((language) => (
-    `<li>${language}</li>`
-  )).join('');
+const destructureDesiredData=(projects)=>{
+ return projects.map(({name,description,html_url:htmlUrl,homepage,topics})=> ({
+  name,
+  description,
+  featured_image: 'images/snapshort_project5.png',
+  link_to_live: homepage,
+  link_to_source: htmlUrl,
+  technologies: ['CANOPY', 'Back', '2015'],
+  languages: topics,
+}));
+}
 
-  // build and return HTML string for the whole project card
-  return `
-    <div class="card ${(index + 1) % 2 === 0 ? 'rv' : ''}">
-    <img src="${project.featured_image}" alt="portfolio project" width="295"
-     height="220">
-     <div class="card-text">
-     <h1 class="header-title">${project.name}</h1>
-     <ul class="tonic-items">
-        ${technologies}
-     </ul>
-     <p class="sub-title">${project.description.substring(0, 83)}</p>
-     <ul class="social-links languages">
-        ${languages}
-     </ul>
-     <button id="${index}"  class="p-btn view-details-btn"><span>See Project</span></button>
-    </div>
-    </div>
-    `;
-}).join('');
+getProjectsFromGithub('https://api.github.com/users/abdallahmalima/repos').then(projects=>{
+  const staredProjects=filterStaredRepos(projects);
+  const desiredProjects= destructureDesiredData(staredProjects);
+  const cards = desiredProjects.map((project, index) => {
+    // build HTML string for technologies
+    const technologies = project.technologies.map((technology) => (
+      `<li>${technology}</li>`
+    )).join('');
+  
+    // build HTML string for languages
+    const languages = project.languages.slice(0, 5).map((language) => (
+      `<li>${language}</li>`
+    )).join('');
+  
+    // build and return HTML string for the whole project card
+    return `
+      <div class="card ${(index + 1) % 2 === 0 ? 'rv' : ''}">
+      <img src="${project.featured_image}" alt="portfolio project" width="295"
+       height="220">
+       <div class="card-text">
+       <h1 class="header-title">${project.name}</h1>
+       <ul class="tonic-items">
+          ${technologies}
+       </ul>
+       <p class="sub-title">${project.description.substring(0, 83)}</p>
+       <ul class="social-links languages">
+          ${languages}
+       </ul>
+       <button id="${index}"  class="p-btn view-details-btn"><span>See Project</span></button>
+      </div>
+      </div>
+      `;
+  }).join('');
+  porfoliodiv.innerHTML = cards;
+
+  const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+[...viewDetailsButtons].forEach((viewDetailsButton) => {
+  viewDetailsButton.addEventListener('click', () => {
+    const index = viewDetailsButton.getAttribute('id');
+    showPopMenu(index,desiredProjects);
+  });
+});
+})
+
+
+
 
 const cardLg = (project) => {
   const technologies = project.technologies.map((technology) => (
@@ -224,13 +233,14 @@ const cardSm = (project) => {
 };
 
 const popCard = (project) => {
+  console.log('pop called.......................');
   if (window.matchMedia('(min-width: 768px)').matches) {
     return cardLg(project);
   }
   return cardSm(project);
 };
 
-porfoliodiv.innerHTML = cards;
+
 
 function addEventListenersToOpenPageBtn() {
   const openPageButtons = document.querySelectorAll('.open-page');
@@ -242,30 +252,29 @@ function addEventListenersToOpenPageBtn() {
   });
 }
 
-function showPopMenu(index) {
+function addEventListenersToCancelPopUp() {
+  document.querySelector('.popup-cancel').addEventListener('click', () => {
+    popcontainer.style.display = 'none';
+  });
+}
+
+function showPopMenu(index,projects) {
   const project = projects[index];
+  console.log('showPopMenu called.................')
   popcontainer.innerHTML = popCard(project);
   popcontainer.style.display = 'flex';
 
   window.onresize = () => {
     popcontainer.innerHTML = popCard(project);
     addEventListenersToOpenPageBtn();
+    addEventListenersToCancelPopUp();
   };
 
-  document.querySelector('.popup-cancel').addEventListener('click', () => {
-    popcontainer.style.display = 'none';
-  });
-
+  addEventListenersToCancelPopUp();
   addEventListenersToOpenPageBtn();
 }
 
-const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
-[...viewDetailsButtons].forEach((viewDetailsButton) => {
-  viewDetailsButton.addEventListener('click', () => {
-    const index = viewDetailsButton.getAttribute('id');
-    showPopMenu(index);
-  });
-});
+
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
