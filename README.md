@@ -11,7 +11,7 @@
 - LInters
 
 ## Live Demo
-[Live Demo Link](https://abdallahmalima.github.io/portfolio_mobile_first)
+[Live Demo Link](https://abdallahmalima.github.io/portfolio/)
 
 
 
@@ -44,7 +44,7 @@ Open index.html file
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/abdallahmalima/portfolio/issues).
 
 ## Show your support
 

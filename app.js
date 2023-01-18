@@ -3,7 +3,7 @@ import projects from './data.js';
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('#menu');
 const closebtn = document.querySelector('.close-btn');
-const porfoliodiv = document.querySelector('#porfolio');
+const porfoliodiv = document.querySelector('#portfolio');
 const menuitems = document.querySelectorAll('.menu-item');
 const popcontainer = document.querySelector('.pop-container');
 const contactForm = document.querySelector('#contact_form');
@@ -24,6 +24,30 @@ closebtn.addEventListener('click', () => {
     menu.style.display = 'none';
   });
 });
+
+const getImageUrl=(()=>{
+  const map=new Map();
+  map.set(568749922,'82ee6b7e-f1df-4300-a60d-a5ed8810c2ca');
+  map.set(556697007,'1ed771c6-c65f-4fe4-9219-968c6ac9ce2a');
+  map.set(566617294,'258ff4f8-f01b-4026-82c3-51b5e35cde6b');
+  map.set(552833444,'deda3c00-7fa2-4be2-9a8e-17f49e89e067');
+  map.set(580058983,'3d9ba8cc-7805-4c6f-b426-b084ae2aebf2');
+  map.set(576255809,'78643528-3313-4dac-87ee-07a977661d39');
+  map.set(585463230,'ea1827f0-2b13-428d-abc0-45d8e77225c6');
+  map.set(571481400,'39bd58ef-8829-4034-af82-31d0909a8e5d');
+  map.set(560948540,'ee3858ee-4879-4632-932d-dc434cd92d88');
+  map.set(539943036,'c8579cc7-059d-454a-9449-a787e78ec9d6');
+
+ return (id)=>{
+  const photo_id=map.get(id);
+  if(photo_id===undefined){
+    return null;
+  }
+  return `https://repository-images.githubusercontent.com/${id}/${photo_id}`;
+ } 
+})();
+
+console.log(getImageUrl('568749922'));
 
 // list of projects in object
 const  getProjectsFromGithub= async (url)=> {
@@ -46,13 +70,15 @@ const filterStaredRepos=(projects)=>{
 }
 
 const destructureDesiredData=(projects)=>{
- return projects.map(({name,description,html_url:htmlUrl,homepage,topics})=> ({
+ 
+ const mProjects=projects.filter(project=>getImageUrl(project.id)!==null);
+ return mProjects.map(({id,name,description,html_url:htmlUrl,homepage,topics})=> ({
   name,
   description,
-  featured_image: 'images/snapshort_project5.png',
+  featured_image:getImageUrl(id),
   link_to_live: homepage,
   link_to_source: htmlUrl,
-  technologies: ['CANOPY', 'Back', '2015'],
+  technologies: [],
   languages: topics,
 }));
 }
@@ -81,7 +107,7 @@ getProjectsFromGithub('https://api.github.com/users/abdallahmalima/repos').then(
        <ul class="tonic-items">
           ${technologies}
        </ul>
-       <p class="sub-title">${project.description.substring(0, 83)}</p>
+       <p class="sub-title">${project.description.substring(0, 193)}...</p>
        <ul class="social-links languages">
           ${languages}
        </ul>
@@ -90,6 +116,7 @@ getProjectsFromGithub('https://api.github.com/users/abdallahmalima/repos').then(
       </div>
       `;
   }).join('');
+  
   porfoliodiv.innerHTML = cards;
 
   const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
@@ -115,7 +142,7 @@ const cardLg = (project) => {
   )).join('');
 
   return `
-    <div class="card-popup popup">
+    <div class="card-popup popup card-lg">
             <div class="card-text">
                 <div class="header-title-popup-div">
                     <h3 class="header-title-popup">${project.name}</h3>
@@ -233,7 +260,6 @@ const cardSm = (project) => {
 };
 
 const popCard = (project) => {
-  console.log('pop called.......................');
   if (window.matchMedia('(min-width: 768px)').matches) {
     return cardLg(project);
   }
@@ -260,7 +286,6 @@ function addEventListenersToCancelPopUp() {
 
 function showPopMenu(index,projects) {
   const project = projects[index];
-  console.log('showPopMenu called.................')
   popcontainer.innerHTML = popCard(project);
   popcontainer.style.display = 'flex';
 
@@ -316,3 +341,5 @@ window.onload = () => {
     };
   }
 };
+
+
