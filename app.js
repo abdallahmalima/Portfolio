@@ -1,4 +1,4 @@
-import projects from './data.js';
+
 
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('#menu');
