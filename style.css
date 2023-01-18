@@ -20,7 +20,7 @@ header {
 }
 
 .card-lg {
- overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 nav {
@@ -820,5 +820,4 @@ span {
     padding-block: 1%;
     padding-inline: 2%;
   }
-  
 }
