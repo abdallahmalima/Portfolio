@@ -253,7 +253,8 @@ getProjectsFromGithub('https://api.github.com/users/abdallahmalima/repos').then(
     [...openPageButtons].forEach((openPageButton) => {
       openPageButton.addEventListener('click', () => {
         popcontainer.style.display = 'none';
-        window.location = openPageButton.getAttribute('link');
+        const link = openPageButton.getAttribute('link');
+        window.open(link, '_blank');
       });
     });
   }
